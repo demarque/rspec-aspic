@@ -34,9 +34,10 @@ describe "POST /categories" do
 
   the(:last_response) { should be_ok }
   the('Category.count') { should eql 2 }
-end```
+end
+```
 
-is the equivalent of ...
+... is the equivalent of ...
 
 ```ruby
 describe "POST /categories" do
@@ -51,7 +52,8 @@ describe "POST /categories" do
     subject { Category.count }
     it { should eql 2 }
   end
-end```
+end
+```
 
 Copyright
 ---------
