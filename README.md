@@ -21,6 +21,16 @@ group :test do
 end
 ```
 
+In your spec_helper.rb:
+
+```ruby
+require 'rspec-aspic'
+
+RSpec.configure do |config|
+  config.include RSpecAspic
+end
+```
+
 Usage
 -----
 
