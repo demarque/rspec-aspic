@@ -1,5 +1,3 @@
-require "rspec-aspic/version"
-
 module RSpecAspic
   def self.included(klass)
     klass.extend(InstanceMethods)
@@ -13,8 +11,5 @@ module RSpecAspic
         it(&block)
       end
     end
-  end
-
-  module ClassMethods
   end
 end
