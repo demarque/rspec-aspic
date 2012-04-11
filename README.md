@@ -36,7 +36,7 @@ Usage
 
 Currently, Aspic only contain one helper.
 
-**the**
+###the
 
 ```ruby
 describe "POST /categories" do
@@ -47,7 +47,7 @@ describe "POST /categories" do
 end
 ```
 
-... is the equivalent of ...
+*is the equivalent of*
 
 ```ruby
 describe "POST /categories" do
@@ -61,6 +61,32 @@ describe "POST /categories" do
   context "Category.count" do
     subject { Category.count }
     it { should eql 2 }
+  end
+end
+```
+
+###fixture
+
+```ruby
+describe "fixture" do
+  fixture :fx, { 'items' => [1,2,3] } do
+    it { should_not be_empty }
+    the("fx['items']") { should eql [1,2,3] }
+  end
+end
+```
+
+*is the equivalent of*
+
+```ruby
+describe "fixture" do
+  context "with the fixture fx {'items'=>[1,2,3]}" do
+    let(:fx) { {'items'=>[1,2,3]} }
+
+    subject { fx }
+
+    it { should_not be_empty }
+    the("fx['items']") { should eql [1,2,3] }
   end
 end
 ```
